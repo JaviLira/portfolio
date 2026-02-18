@@ -1,0 +1,76 @@
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px; /* Un poco más de aire */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Un toque de estilo para títulos */
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px; /* Cambiamos margin por padding para evitar colapsos */
+}
+
+.servcies-section-wrapper {
+  width: 100%;
+  max-width: 1100px; /* Mejor que un % fijo para pantallas grandes */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.services-box {
+  background-color: #222222;
+  color: white;
+  width: 280px; /* Un pelín más ancha */
+  min-height: 300px; /* Para que todas midan lo mismo */
+  padding: 35px 25px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinea contenido al principio */
+  gap: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto pop */
+  cursor: default;
+}
+
+.services-box:hover {
+  background-color: #d2691e; /* Color lila de tu fondo para coherencia */
+  transform: translateY(-10px); /* Elevación al pasar el ratón */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.services-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.services-box p {
+  font-size: 0.95rem;
+  color: #cccccc; /* Gris claro para que el h3 resalte más */
+  line-height: 1.5;
+}
+
+.services-box i {
+  background-color: white;
+  color: #4e54c8; /* Icono a juego con el fondo */
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+}
+
+.services-box:hover i {
+  transform: rotate(360deg); /* El icono gira al pasar el ratón */
+}

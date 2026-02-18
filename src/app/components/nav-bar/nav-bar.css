@@ -1,17 +1,23 @@
 .navigation {
   height: 80px;
   background: #262626;
+  display: flex;             /* Activamos Flexbox */
+  align-items: center;       /* Centra todo verticalmente */
+  justify-content: space-between; /* Manda el logo a la izquierda y el menú a la derecha */
+  padding: 0 20px;           /* Espacio a los lados */
+  position: relative;
+  z-index: 10;               /* ¡Ojo! Asegúrate que esté sobre tus círculos de fondo */
 }
 
 .nav-container {
-  margin: 0 auto;
-  margin-left: 20px;
-  position: relative;
+  width: 100%;          /* Muy importante: que ocupe todo el ancho */
+  display: flex;        /* El contenedor ahora es el jefe del Flexbox */
+  justify-content: space-between; /* Empuja el logo a la izquierda y el menú a la derecha */
+  align-items: center;  /* Centra verticalmente logo y lista */
+  padding: 0 30px;      /* Espacio a los lados para que no toquen el borde */
 }
 
 .brand {
-  float: left;
-  line-height: 70px;
   font-size: 2em;
 }
 
@@ -21,32 +27,33 @@
 }
 
 .nav-list {
-  float: right;
+  display: flex;             /* Los <li> se pondrán uno al lado del otro */
   list-style: none;
-  margin: auto;
-  margin-top: 4px;
-  margin-right: 2vw;
+  margin: 0;
   padding: 0;
-  position: relative;
-  font-size: 18px;
-
 }
 
 .nav-list li {
-  float: left;
-  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.nav-list li:hover {
+  transform: translateY(-5px); /* Sube 5 píxeles */
 }
 
 .nav-list li a {
   display: block;
   padding: 0 20px;
-  line-height: 70px;
   color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-list li a:hover {
+  color: #d2691e;
 }
 
 #ejrLogo {
-  width: 5vm;
-  height: 2vw;
+  width: 5vw;                /* Corregido de vm a vw */
+  height: auto;              /* Mejor dejar height auto para no deformar */
 }

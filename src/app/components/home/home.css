@@ -1,113 +1,113 @@
-#midSectionTitle_Container{
-  position:fixed;
-  background-color:transparent;
+
+#midSectionTitle_Container {
+  display: flex;             /* Activamos Flexbox */
+  align-items: center;       /* Centra verticalmente logo y texto */
+  justify-content: center;   /* Centra todo el bloque en pantalla */
   width: 100%;
-  height: 215px;
-  margin-top:10%;
-}
-
-#left{
-  background-color:transparent;
-  float:left;
-  width:50%;
-  height:100%;
-}
-
-
-#ejrLogo{
-  width:30%;
-  height:100%;
-  float:right;
-  padding-top:5%;
-}
-
-#right{
-  background-color:transparent;
-  float:right;
-  width:50%;
-  height:100%;
-}
-
-#slantedLine{
-  position:relative;
-  float:left;
-  left:-30px;
-  width: 10%;
-  height: 100%;
-  border-right: 5px solid black;
-  margin-top:-5px;
-  transform: rotate(15deg)
-}
-
-#rightText{
-  background-color:transparent;
-  margin-top:5%;
-  margin-left:10%;
-  width:100%;
-}
-
-#rightText > h1{
-  margin-bottom:15px;
-  font-size:40px;
-  font-family: 'Segoe UI';
-}
-
-#letterE{
-  color :rgb(204, 173, 0);
-}
-
-#rightText > p{
-  color:grey;
-  font-style:italic;
-  font-size:20px;
-  font-family: 'Arial';
-}
-
-#socialMediaIcons{
+  min-height: 400px;         /* Altura mínima en lugar de fixed */
+  margin-top: 50px;          /* Espacio respecto al menú */
   position: relative;
-  left:-10px;
-  background-color:transparent;
-  width: 100%;
-  height: 50px;
+  z-index: 5;                /* Por encima de los círculos de fondo */
+  animation: fadeIn 1.2s ease-out;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#left {
+  flex: 1;                   /* Ocupa el 50% */
+  display: flex;
+  justify-content: flex-end; /* Pega la imagen a la derecha (hacia el centro) */
+  padding-right: 40px;
+}
+
+#ejrLogo {
+  width: 250px;              /* Tamaño controlado */
+  height: 250px;
+  object-fit: cover;         /* Para que la foto no se deforme */
+  border-radius: 15px;       /* Opcional: un toque moderno */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 4px solid white;
+}
+
+#right {
+  flex: 1;                   /* Ocupa el otro 50% */
+  display: flex;
+  align-items: center;       /* Alinea línea y texto horizontalmente */
+  position: relative;
+}
+
+#slantedLine {
+  width: 4px;
+  height: 200px;
+  background-color: #000;    /* Puedes cambiarlo por el lila #8f94fb */
+  transform: rotate(15deg);
+  margin-right: 30px;        /* Espacio entre línea y texto */
+}
+
+#rightText h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.2;
+}
+
+#letterE {
+  color: rgb(204, 173, 0);
+  font-weight: bold;
+}
+
+#rightText p {
+  color: grey;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 10px 0 20px 0;
+}
+
+/* --- Iconos Sociales --- */
 #socialMediaIcons ul {
-  float:left;
-  position:fixed;
-  background-color:transparent;
-  width:500px; /*160px*/
-  height:55px;
-  list-style-type: none;
+  display: flex;             /* Iconos en fila */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 #socialMediaIcons ul li {
-    display: inline-block;
-    border:2px solid transparent;
-    background-color:transparent;
-    margin:5px 10px 0 0;
-    border-radius: 50%;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
 }
 
-
-#socialMediaIcons ul li:hover{
-   border:2px solid rgb(212,175,55);
+#socialMediaIcons ul li:hover {
+  transform: translateY(-3px); /* Pequeño salto al pasar el ratón */
 }
 
-
-
-#socialMediaIcons ul li a .icon {
-      color: grey;
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
-      text-decoration: none;
-      height: 35px;
-      width: 35px;
-      font-size:17px;
+.icon {
+  font-size: 1.5rem;
+  color: #262626;
+  transition: color 0.3s;
 }
 
-#socialMediaIcons ul li a .icon:hover{
-  color: rgb(212,175,55);
+.icon:hover {
+  color: rgb(212, 175, 55);
 }
 
-
+@media (max-width: 768px) {
+  #midSectionTitle_Container {
+    flex-direction: column;  /* Apila los elementos en vertical */
+    text-align: center;
+  }
+  #left, #right {
+    padding: 20px;
+  }
+  #slantedLine {
+    display: none;           /* Es mejor ocultar la línea en móvil para ganar espacio */
+  }
+  #right {
+    justify-content: center;
+  }
+  #socialMediaIcons ul {
+    justify-content: center;
+  }
+}
