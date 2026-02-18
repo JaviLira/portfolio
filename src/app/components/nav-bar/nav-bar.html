@@ -1,0 +1,34 @@
+<nav class="navigation">
+
+  <div class="nav-container">
+    <div class="brand">
+      <a href="#">Logo</a>
+    </div>
+
+    <div class="nav-toggle"
+         [class.active]="isMenuOpen"
+         (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-list"
+        [class.open]="isMenuOpen">
+
+      <li>
+        <a href="#">Home</a>
+      </li>
+
+      <li>
+        <a href="#">Sobre Mi</a>
+      </li>
+
+      <li>
+        <a href="#">Contacta</a>
+      </li>
+
+    </ul>
+  </div>
+
+</nav>
