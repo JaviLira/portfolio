@@ -12,23 +12,16 @@ export class NavBar {
   @Output() scrollChange = new EventEmitter<boolean>();
 
   isScrolled = false;
-  isVisible = false;
 
 @HostListener('window:scroll', [])
   onWindowScroll() {
-    const offset = window.scrollY || document.documentElement.scrollTop;
+    const offset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const newState = offset > 150;
 
     if (this.isScrolled !== newState) {
       this.isScrolled = newState;
-      this.isVisible = newState;
       this.scrollChange.emit(this.isScrolled);
     }
-  }
-
-
-  toggleMenu() {
-    this.isVisible = !this.isVisible;
   }
 
 }
