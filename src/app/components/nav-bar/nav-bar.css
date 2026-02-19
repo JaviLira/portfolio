@@ -75,17 +75,17 @@
 }
 
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  list-style-type: none;
+  list-style: none;
+  padding: 10px 5px;
   margin: 0;
-  padding: 0;
-  padding-top: 20px;
-  background: #fff4f5;
-  z-index: 2000; /* Asegura que esté sobre todo */
-  border-right: 1px solid #ffe2e3;
+  background: rgba(20, 20, 20, 0.85); /* Fondo casi negro translúcido */
+  backdrop-filter: blur(8px);        /* Efecto desenfoque */
+  border-radius: 40px;               /* Forma de píldora */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .menu li {
@@ -93,40 +93,54 @@
 }
 
 .menu li a {
-  display: flex;             /* Mejor que block para centrar iconos */
+  width: 50px;
+  height: 50px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 5em;               /* Corregido */
-  width: 5em;
-  color: #ff5c62;
-  background: #fff4f5;
-  position: relative;
-  border-bottom: 1px solid #ffe2e3;
-  transition: all 0.3s ease-in-out;
+  color: #ffffff;
   text-decoration: none;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
 /* Tooltip (El texto que sale al hacer hover) */
-.menu li:after {
+.menu li::after {
   content: attr(title);
   position: absolute;
-  left: 5em;
-  top: 0;
-  height: 5em;
-  display: flex;
-  align-items: center;
-  background: #ff5c62;
+  left: 65px;         /* Separación del dock */
+  top: 50%;
+  transform: translateY(-50%);
+  background: #d2691e;
   color: white;
-  padding: 0 2em;
+  padding: 6px 15px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: all 0.3s ease-in-out;
   visibility: hidden;
   opacity: 0;
-  pointer-events: none; /* Para que no estorbe al ratón */
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
 
-.menu li:hover:after {
+.menu li::before {
+  content: "";
+  position: absolute;
+  left: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: #d2691e;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.menu li:hover::after,
+.menu li:hover::before {
   visibility: visible;
   opacity: 1;
 }
@@ -134,8 +148,9 @@
 /* Efectos de Hover y Activo */
 .menu li a:hover,
 .menu li a.active {
-  background: #ff5c62;
-  color: #fff;
+  background: #d2691e;
+  color: white;
+  transform: scale(1.1);
 }
 
 /* La "flechita" indicadora para el link activo */
@@ -152,4 +167,12 @@
 /* Tamaño de los iconos */
 .menu li a i {
   font-size: 1.5em;
+}
+
+.nav-side {
+  position: fixed;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2000;
 }
