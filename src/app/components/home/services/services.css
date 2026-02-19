@@ -59,7 +59,7 @@ h2 {
 
 .services-box i {
   background-color: white;
-  color: #4e54c8; /* Icono a juego con el fondo */
+  color: #d2691e; /* Icono a juego con el fondo */
   width: 70px;
   height: 70px;
   display: flex;
@@ -67,7 +67,7 @@ h2 {
   align-items: center;
   border-radius: 50%;
   margin-bottom: 10px;
-  font-size: 28px;
+  font-size: 3rem;
   transition: transform 0.3s ease;
 }
 
