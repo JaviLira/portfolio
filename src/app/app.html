@@ -1,7 +1,6 @@
 <app-nav-bar (scrollChange)="isSidebarVisible = $event"></app-nav-bar>
 
 <div [class.content-shifted]="isSidebarVisible">
-  <app-home></app-home>
   <router-outlet />
 </div>
 
