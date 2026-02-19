@@ -1,18 +1,13 @@
-<app-nav-bar></app-nav-bar>
-<app-home></app-home>
+<app-nav-bar (scrollChange)="isSidebarVisible = $event"></app-nav-bar>
 
-<div class="area" >
-            <ul class="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
-    </div >
-<router-outlet />
+<div [class.content-shifted]="isSidebarVisible">
+  <app-home></app-home>
+  <router-outlet />
+</div>
+
+<div class="area">
+  <ul class="circles">
+    <li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li>
+  </ul>
+</div>

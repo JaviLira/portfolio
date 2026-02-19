@@ -12,4 +12,5 @@ import { Home } from "./components/home/home";
 })
 export class App {
   protected readonly title = signal('portfolio-javi-lira');
+  isSidebarVisible = false;
 }

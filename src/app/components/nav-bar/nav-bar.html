@@ -1,37 +1,63 @@
-<nav class="navigation">
 
-  <div class="nav-container">
-    <div class="brand">
-      <a href="#"><img id="ejrLogo" src="granada1.jpeg"></a>
+  <nav class="navigation">
+
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#"><img id="ejrLogo" src="granada1.jpeg"></a>
+      </div>
+
+      <ul class="nav-list">
+
+        <li>
+          <a href="#">Home</a>
+        </li>
+
+        <li>
+          <a href="#">Sobre Mi</a>
+        </li>
+
+        <li>
+          <a href="#">Experiencia</a>
+        </li>
+
+        <li>
+          <a href="#">Formacion</a>
+        </li>
+
+        <li>
+          <a href="#">Habilidades</a>
+        </li>
+
+        <li>
+          <a href="#">Contacta</a>
+        </li>
+
+      </ul>
     </div>
 
-    <ul class="nav-list">
+  </nav>
 
-      <li>
-        <a href="#">Home</a>
+@if (isScrolled) {
+  <nav class="nav-side">
+    <ul class="menu">
+      <li title="Home">
+        <a href="#" class="bi bi-house-door"></a>
       </li>
-
-      <li>
-        <a href="#">Sobre Mi</a>
+      <li title="Sobre mi">
+        <a href="#" class="bi bi-person-vcard"></a>
       </li>
-
-      <li>
-        <a href="#">Experiencia</a>
+      <li title="Experiencia">
+        <a href="#" class="bi bi-briefcase"></a>
       </li>
-
-      <li>
-        <a href="#">Formacion</a>
+      <li title="Formacion">
+        <a href="#" class="bi bi-mortarboard"></a>
       </li>
-
-      <li>
-        <a href="#">Habilidades</a>
+      <li title="Habilidades">
+        <a href="#" class="bi bi-code-slash"></a>
       </li>
-
-      <li>
-        <a href="#">Contacta</a>
+      <li title="Contacta">
+        <a href="#" class="bi bi-envelope-at"></a>
       </li>
-
     </ul>
-  </div>
-
-</nav>
+  </nav>
+}

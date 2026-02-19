@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,18 +8,19 @@ import { Component, HostListener } from '@angular/core';
 })
 export class NavBar {
 
+  @Output() scrollChange = new EventEmitter<boolean>();
 
-  isMenuOpen = false;
-  activeDropdown: string | null = null;
+  isScrolled = false;
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+@HostListener('window:scroll', [])
+  onWindowScroll() {
+    const offset = window.scrollY || document.documentElement.scrollTop;
+    const newState = offset > 150;
+
+    if (this.isScrolled !== newState) {
+      this.isScrolled = newState;
+      this.scrollChange.emit(this.isScrolled); // Enviamos el valor al padre
+    }
   }
-
-  @HostListener('document:click')
-  closeDropdown() {
-    this.activeDropdown = null;
-  }
-
 
 }
