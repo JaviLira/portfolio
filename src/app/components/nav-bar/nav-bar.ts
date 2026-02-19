@@ -12,6 +12,7 @@ export class NavBar {
   @Output() scrollChange = new EventEmitter<boolean>();
 
   isScrolled = false;
+  isVisible = false;
 
 @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -20,8 +21,14 @@ export class NavBar {
 
     if (this.isScrolled !== newState) {
       this.isScrolled = newState;
-      this.scrollChange.emit(this.isScrolled); // Enviamos el valor al padre
+      this.isVisible = newState;
+      this.scrollChange.emit(this.isScrolled);
     }
+  }
+
+
+  toggleMenu() {
+    this.isVisible = !this.isVisible;
   }
 
 }

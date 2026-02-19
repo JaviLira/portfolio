@@ -3,7 +3,7 @@
 
     <div class="nav-container">
       <div class="brand">
-        <a href="/"><img id="ejrLogo" src="granada1.jpeg"></a>
+        <a href="/"><img id="ejrLogo" src="lucario.jpg"></a>
       </div>
 
         <ul class="nav-list">
@@ -42,8 +42,8 @@
 
   </nav>
 
-@if (isScrolled) {
-<nav class="nav-side">
+
+<nav class="nav-side" [class.hidden]="!isVisible">
   <ul class="menu">
     <li title="Home">
       <a routerLink="./"
@@ -83,4 +83,4 @@
     </li>
   </ul>
 </nav>
-}
+

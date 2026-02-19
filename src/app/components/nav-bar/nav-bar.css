@@ -65,12 +65,10 @@
   border-bottom: 2px solid #d2691e;
 }
 
-/* Solo activamos el pseudo-elemento si NO es el activo */
 .nav-list li a:not(.active):hover::after {
   width: 100%;
 }
 
-/* El activo ya tiene su propia marca, así que ocultamos el after */
 .nav-list li a.active::after {
   display: none;
 }
@@ -114,14 +112,13 @@
   list-style: none;
   padding: 10px 5px;
   margin: 0;
-  background: rgba(20, 20, 20, 0.85); /* Fondo casi negro translúcido */
-  backdrop-filter: blur(8px);        /* Efecto desenfoque */
-  border-radius: 40px;               /* Forma de píldora */
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 40px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   gap: 8px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .menu li {
@@ -141,11 +138,10 @@
   transition: all 0.3s ease;
 }
 
-/* Tooltip (El texto que sale al hacer hover) */
 .menu li::after {
   content: attr(title);
   position: absolute;
-  left: 65px;         /* Separación del dock */
+  left: 65px;
   top: 50%;
   transform: translateY(-50%);
   background: #d2691e;
@@ -181,7 +177,6 @@
   opacity: 1;
 }
 
-/* Efectos de Hover y Activo */
 .menu li a:hover,
 .menu li a.active {
   background: #d2691e !important;
@@ -189,12 +184,11 @@
   transform: scale(1.1);
 }
 
-/* La "flechita" indicadora para el link activo */
 .menu li a.active:after {
   position: absolute;
   left: 100%;
   top: 50%;
-  margin-top: -10px; /* Centra la flecha */
+  margin-top: -10px;
   content: "";
   border: 10px solid transparent;
   border-left-color: #d2691e;
@@ -202,7 +196,6 @@
   opacity: 1;
 }
 
-/* Tamaño de los iconos */
 .menu li a i {
   font-size: 1.5em;
 }
@@ -219,10 +212,26 @@
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(-50%) translateX(-100px); /* Viene desde la izquierda */
+    transform: translateY(-50%) translateX(-100px);
   }
   to {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
   }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-100px);
+  }
+}
+
+.nav-side.hidden {
+  animation: slideOut 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  pointer-events: none; /* Para que no se pueda clicar mientras se va */
 }
