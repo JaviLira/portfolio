@@ -1,9 +1,8 @@
 p {
   font-size: 16px;
   line-height: 165%;
-  margin-bottom: 15px; /* Añadido para mejor respiro entre párrafos */
+  margin-bottom: 15px;
 }
-
 h2 {
   padding-top: 20px;
   font-family: 'Lato', 'Open Sans', sans-serif;
@@ -13,23 +12,18 @@ h2 {
   border-bottom: 1px solid #61A6AB;
   margin-bottom: 20px;
 }
-
 h3 {
   line-height: 155%;
-  color: #333; /* Un tono más oscuro para contraste */
+  color: #333;
 }
-
-/* --- 2. CONTENEDORES --- */
 .gray-background .container {
   background-color: #F7EFED;
-  padding: 40px 60px; /* Aumentado el padding superior para equilibrio */
+  padding: 40px 60px; 
   margin-top: 100px;
-  border-radius: 8px; /* Opcional: suaviza las esquinas */
+  border-radius: 8px; 
 }
-
-/* --- 3. EFECTO ESCRITURA (¿Quién soy?) --- */
 .typing-effect {
-  display: inline-block; /* Cambiado a inline-block para que el cursor no flote */
+  display: inline-block;
   font-family: 'Roboto Mono', monospace;
   white-space: nowrap;
   overflow: hidden;
@@ -44,8 +38,6 @@ h3 {
 @keyframes typing { from { width: 0 } to { width: 11ch } }
 @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #61A6AB } }
 
-/* --- 4. LISTA MINIMALISTA (Habilidades) --- */
-/* Eliminamos cualquier rastro de los selectores anteriores que causaban el 'cuadrado' */
 .lista-minimal {
   list-style: none !important;
   padding: 0 !important;
@@ -54,14 +46,14 @@ h3 {
 
 .lista-minimal li {
   position: relative;
-  padding-left: 25px !important; /* Espacio para el punto */
+  padding-left: 25px !important; 
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 1.5;
 }
 
 .lista-minimal li:before {
-  content: "•" !important; /* Forzamos el punto decorativo */
+  content: "•" !important;
   position: absolute;
   left: 0;
   top: -2px;
@@ -79,7 +71,6 @@ h3 {
   margin-bottom: 4px;
 }
 
-/* --- 5. EFECTO APARICIÓN (Fades) --- */
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
@@ -102,19 +93,20 @@ h3 {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  width: 100%;
 }
 
 .profile-photo {
-  width: 350px; 
-  height: 350px;
-  border-radius: 50%; 
-  object-fit: cover; 
+  width: 100%;
+  max-width: 350px;     /* tamaño máximo */
+  aspect-ratio: 1 / 1;  /* siempre cuadrada */
+  border-radius: 50%;
+  object-fit: cover;
   border: 5px solid #fff;
   box-shadow: 0 10px 30px rgba(97, 166, 171, 0.2);
   transition: transform 0.3s ease;
 }
 
-/* Efecto al pasar el ratón */
 .profile-photo:hover {
   transform: scale(1.05);
 }
