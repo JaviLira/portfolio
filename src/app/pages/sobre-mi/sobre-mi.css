@@ -1,0 +1,120 @@
+p {
+  font-size: 16px;
+  line-height: 165%;
+  margin-bottom: 15px; /* Añadido para mejor respiro entre párrafos */
+}
+
+h2 {
+  padding-top: 20px;
+  font-family: 'Lato', 'Open Sans', sans-serif;
+  color: #61A6AB;
+  font-size: 3em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #61A6AB;
+  margin-bottom: 20px;
+}
+
+h3 {
+  line-height: 155%;
+  color: #333; /* Un tono más oscuro para contraste */
+}
+
+/* --- 2. CONTENEDORES --- */
+.gray-background .container {
+  background-color: #F7EFED;
+  padding: 40px 60px; /* Aumentado el padding superior para equilibrio */
+  margin-top: 100px;
+  border-radius: 8px; /* Opcional: suaviza las esquinas */
+}
+
+/* --- 3. EFECTO ESCRITURA (¿Quién soy?) --- */
+.typing-effect {
+  display: inline-block; /* Cambiado a inline-block para que el cursor no flote */
+  font-family: 'Roboto Mono', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #61A6AB;
+  width: 0;
+  max-width: 11ch; 
+  animation: 
+    typing 1.75s steps(11, end) forwards, 
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing { from { width: 0 } to { width: 11ch } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #61A6AB } }
+
+/* --- 4. LISTA MINIMALISTA (Habilidades) --- */
+/* Eliminamos cualquier rastro de los selectores anteriores que causaban el 'cuadrado' */
+.lista-minimal {
+  list-style: none !important;
+  padding: 0 !important;
+  margin-top: 25px;
+}
+
+.lista-minimal li {
+  position: relative;
+  padding-left: 25px !important; /* Espacio para el punto */
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.lista-minimal li:before {
+  content: "•" !important; /* Forzamos el punto decorativo */
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: #61A6AB;
+  font-size: 1.8rem;
+}
+
+.skill-title {
+  display: block;
+  font-weight: bold;
+  color: #61A6AB;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+/* --- 5. EFECTO APARICIÓN (Fades) --- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 2s; }
+.delay-2 { animation-delay: 2.5s; }
+.delay-3 { animation-delay: 3s; }
+.delay-4 { animation-delay: 3.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.profile-photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-photo {
+  width: 350px; 
+  height: 350px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 5px solid #fff;
+  box-shadow: 0 10px 30px rgba(97, 166, 171, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+.profile-photo:hover {
+  transform: scale(1.05);
+}
