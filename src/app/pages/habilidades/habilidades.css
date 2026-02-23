@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com');
+
+:host {
+  --font-sans: 'Montserrat', sans-serif;
+  --red: #e74c3c;
+  --red-light: #f17062; /* Equivalente a lighten(10%) */
+  --dark: #3d3d3d;
+  --dark-light: #575757; /* Equivalente a lighten(10%) */
+}
+
+.wrap {
+  width: 50%;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  padding: .5em 0;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #dadada;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.bar {
+  background: var(--red);
+  width: 0;
+  margin: .25em 0;
+  color: #fff;
+  position: relative;
+  /* La transición se aplica cuando Angular cambia el ancho */
+  transition: width 2s cubic-bezier(0.1, 0, 0.1, 1);
+  clear: both;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Colores alternos para las barras */
+.bar:nth-of-type(2n) {
+  background: var(--red-light);
+}
+
+.bar .label {
+  font-size: .75em;
+  padding: 1em;
+  background: var(--dark);
+  width: 8em;
+  display: inline-block;
+  z-index: 2;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.bar .label.light {
+  background: var(--dark-light);
+}
+
+.bar .count {
+  position: absolute;
+  right: .5em;
+  font-size: .75em;
+  font-weight: bold;
+}
