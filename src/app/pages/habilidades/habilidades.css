@@ -1,67 +1,95 @@
-
-
 :host {
   --font-sans: 'Montserrat', sans-serif;
-  --red: #e74c3c;
-  --red-light: #f17062; /* Equivalente a lighten(10%) */
-  --dark: #3d3d3d;
-  --dark-light: #575757; /* Equivalente a lighten(10%) */
+  --accent: #61A6AB;
+  --accent-light: #7dbfc4;
+  --dark: #333;
 }
 
 .wrap {
-  width: 50%;
-  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+  margin: 50px auto;
   font-family: var(--font-sans);
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
-  font-size: 1.5em;
-  padding: .5em 0;
-  margin-bottom: 1em;
-  border-bottom: 1px solid #dadada;
-  letter-spacing: 3px;
+  font-size: 1.8em;
+  padding-bottom: .5em;
+  margin-bottom: 1.5em;
+  border-bottom: 2px solid var(--accent);
+  color: var(--dark);
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.bar {
-  background: var(--red);
-  width: 0;
-  margin: .25em 0;
-  color: #fff;
-  position: relative;
-  /* La transición se aplica cuando Angular cambia el ancho */
-  transition: width 2s cubic-bezier(0.1, 0, 0.1, 1);
-  clear: both;
+.holder {
+  background: #f7efed;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.bar-wrapper {
   display: flex;
   align-items: center;
-  box-sizing: border-box;
+  margin-bottom: 12px;
+  height: 40px;
+  width: 100%;
 }
 
-/* Colores alternos para las barras */
-.bar:nth-of-type(2n) {
-  background: var(--red-light);
-}
-
-.bar .label {
-  font-size: .75em;
-  padding: 1em;
+.label {
+  width: 120px;
+  min-width: 120px;
   background: var(--dark);
-  width: 8em;
-  display: inline-block;
-  z-index: 2;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
-  box-sizing: border-box;
+  font-size: 0.85em;
+  border-radius: 4px 0 0 4px;
 }
 
-.bar .label.light {
-  background: var(--dark-light);
+.progress-bg {
+  flex-grow: 1;
+  background: #eee;
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+  position: relative;
+  overflow: hidden; /* Asegura que la barra no se salga del radio del borde */
 }
 
-.bar .count {
-  position: absolute;
-  right: .5em;
-  font-size: .75em;
+.bar-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0;
+  transition: width 2s cubic-bezier(0.1, 0, 0.1, 1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Color alterno para filas pares */
+.bar-wrapper:nth-of-type(2n) .bar-fill {
+  background: var(--accent-light);
+}
+
+.count {
+  color: white;
+  font-size: 0.9em;
   font-weight: bold;
+  padding-right: 15px;
+  white-space: nowrap;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .label {
+    width: 90px;
+    min-width: 90px;
+    font-size: 0.75em;
+  }
 }

@@ -1,33 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-interface Skill {
-  name: string;
-  percent: number;
-  isLight?: boolean;
-}
+import { CommonModule } from '@angular/common';
+import { ChangeDetectorRef } from '@angular/core';
+
 @Component({
   selector: 'app-habilidades',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './habilidades.html',
   styleUrl: './habilidades.css',
 })
 export class Habilidades implements OnInit {
   public animated = false;
-  
-  public skills: Skill[] = [
-    { name: 'Photoshop', percent: 85 },
-    { name: 'Illustrator', percent: 75, isLight: true },
-    { name: 'Indesign', percent: 65 },
-    { name: 'HTML', percent: 90, isLight: true },
-    { name: 'CSS', percent: 90 },
-    { name: 'jQuery', percent: 80, isLight: true },
-    { name: 'RWD', percent: 85, isLight: true },
-    { name: 'PHP', percent: 75 },
-    { name: 'WordPress', percent: 80, isLight: true },
-    { name: 'SASS/SCSS', percent: 70 }
+  constructor(private cd: ChangeDetectorRef) {}
+
+  public skills = [
+    { name: 'Angular', percent: 85 },
+    { name: 'Spring Boot', percent: 80 },
+    { name: 'Java', percent: 90 },
+    { name: 'Python', percent: 75 },
+    { name: 'Selenium', percent: 95 },
+    { name: 'Cucumber', percent: 90 },
+    { name: 'SQL', percent: 70 },
+    { name: 'Docker', percent: 65 }
   ];
 
-  ngOnInit() {
-    // Disparamos la animación tras un breve delay
-    setTimeout(() => this.animated = true, 500);
-  }
+ngOnInit() {
+  setTimeout(() => {
+    this.animated = true;
+    this.cd.detectChanges(); // Fuerza a Angular a ver el cambio de ancho
+  }, 300);
+}
 }

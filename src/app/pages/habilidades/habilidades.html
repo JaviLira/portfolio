@@ -1,24 +1,20 @@
 <div class="wrap">
-  <h1>Animated Bar Graphs</h1>
+  <h1>Mis Habilidades Técnicas</h1>
   <div class="holder">
-    
     @for (skill of skills; track skill.name; let i = $index) {
-      <div class="bar" 
-           [style.width]="animated ? skill.percent + '%' : '0%'"
-           [style.transition-delay]="(i * 100) + 'ms'">
-        
-        <span class="label" [class.light]="skill.isLight">
-          {{ skill.name }}
-        </span>
-        
-        <!-- Reemplazamos *ngIf por @if -->
-        @if (animated) {
-          <span class="count">
-            {{ skill.percent }}%
-          </span>
-        }
+      <div class="bar-wrapper">
+        <span class="label">{{ skill.name }}</span>
+
+        <div class="progress-bg">
+          <div class="bar-fill"
+               [style.width]="animated ? skill.percent + '%' : '0%'"
+               [style.transition-delay]="(i * 100) + 'ms'">
+            @if (animated) {
+              <span class="count">{{ skill.percent }}%</span>
+            }
+          </div>
+        </div>
       </div>
     }
-
   </div>
 </div>
