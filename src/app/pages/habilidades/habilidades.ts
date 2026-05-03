@@ -53,6 +53,16 @@ export class Habilidades{
         { name: 'Jenkins', icon: 'bi bi-box-seam-fill', level: 'Intermedio' },
         { name: 'Git / GitHub', icon: 'bi bi-github', level: 'Avanzado' }
       ]
+    },
+    {
+      title: 'Metodologías y QA Ops',
+      icon: 'bi bi-git',
+      skills: [
+        { name: 'Agile / Scrum', icon: 'bi bi-people-fill', level: 'Avanzado' },
+        { name: 'BDD (Gherkin)', icon: 'bi bi-chat-left-quote-fill', level: 'Avanzado' },
+        { name: 'TDD', icon: 'bi bi-shield-check', level: 'Intermedio' },
+        { name: 'CI/CD Pipelines', icon: 'bi bi-arrow-repeat', level: 'Intermedio' }
+      ]
     }
   ];
 }

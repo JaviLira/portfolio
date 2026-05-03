@@ -19,10 +19,13 @@
 }
 
 .categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  display: flex;          /* Cambiamos de grid a flex para centrar fácilmente */
+  flex-wrap: wrap;        /* Permite que las tarjetas salten de línea */
+  gap: 30px;              /* Mantiene el espacio entre tarjetas */
+  justify-content: center; /* ¡ESTA ES LA CLAVE! Centra las tarjetas de la última fila */
   padding: 0 20px;
+  max-width: 1200px;      /* Opcional: para que no se estiren demasiado en pantallas gigantes */
+  margin: 0 auto;         /* Centra todo el grupo en la pantalla */
 }
 
 /* Tarjeta de Categoría */
@@ -32,7 +35,9 @@
   padding: 30px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
-  border-top: 5px solid #61A6AB; /* Tu azul */
+  border-top: 5px solid #61A6AB;
+  width: 350px;           /* Ancho fijo para que todas sean iguales */
+  flex-grow: 0;           /* Evita que se estiren para llenar el espacio */
 }
 
 .category-card:hover {
