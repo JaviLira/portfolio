@@ -27,7 +27,11 @@ export class Habilidades{
       icon: 'bi bi-layout-text-sidebar-reverse',
       skills: [
         { name: 'Angular', icon: 'bi bi-hexagon-fill', level: 'Avanzado' },
-        { name: 'TypeScript', icon: 'bi bi-filetype-tsx', level: 'Avanzado' },
+        { name: 'React', icon: 'bi bi-filetype-tsx', level: 'Intermedio' },
+        { name: 'Node.js', icon: 'bi bi-filetype-tsx', level: 'Intermedio' },
+        { name: 'TypeScript', icon: 'bi bi-filetype-tsx', level: 'Intermedio' },
+        { name: 'JavaScript', icon: 'bi bi-filetype-tsx', level: 'Intermedio' },
+        { name: 'XML', icon: 'bi bi-filetype-tsx', level: 'Explorando' },
         { name: 'HTML5/CSS3', icon: 'bi bi-code-slash', level: 'Avanzado' }
       ]
     },
@@ -35,8 +39,8 @@ export class Habilidades{
       title: 'Backend & Bases de Datos',
       icon: 'bi bi-database-fill-gear',
       skills: [
-        { name: 'Java / Spring Boot', icon: 'bi bi-cup-hot-fill', level: 'Avanzado' },
-        { name: 'Python', icon: 'bi bi-terminal-fill', level: 'Intermedio' },
+        { name: 'Java / Spring Boot', icon: 'bi bi-cup-hot-fill', level: 'Intermedio' },
+        { name: 'Python', icon: 'bi bi-terminal-fill', level: 'Avanzado' },
         { name: 'SQL (PostgreSQL/MySQL)', icon: 'bi bi-database-fill', level: 'Avanzado' }
       ]
     },
@@ -46,6 +50,7 @@ export class Habilidades{
       skills: [
         { name: 'Selenium / Cucumber', icon: 'bi bi-robot', level: 'Avanzado' },
         { name: 'Docker', icon: 'bi bi-box-seam-fill', level: 'Intermedio' },
+        { name: 'Jenkins', icon: 'bi bi-box-seam-fill', level: 'Intermedio' },
         { name: 'Git / GitHub', icon: 'bi bi-github', level: 'Avanzado' }
       ]
     }
