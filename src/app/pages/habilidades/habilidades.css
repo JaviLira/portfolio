@@ -1,95 +1,117 @@
-:host {
-  --font-sans: 'Montserrat', sans-serif;
-  --accent: #61A6AB;
-  --accent-light: #7dbfc4;
-  --dark: #333;
+.habilidades-section {
+  padding: 80px 0;
+  min-height: 100vh;
 }
 
-.wrap {
-  width: 90%;
-  max-width: 800px;
-  margin: 50px auto;
-  font-family: var(--font-sans);
-}
-
-h1 {
-  font-weight: 600;
+.main-title {
   text-align: center;
-  font-size: 1.8em;
-  padding-bottom: .5em;
-  margin-bottom: 1.5em;
-  border-bottom: 2px solid var(--accent);
-  color: var(--dark);
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.holder {
-  background: #f7efed;
+.subtitle {
+  text-align: center;
+  color: #d2691e;
+  margin-bottom: 50px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Tarjeta de Categoría */
+.category-card {
+  background: white;
+  border-radius: 15px;
   padding: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  border-top: 5px solid #61A6AB; /* Tu azul */
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.category-header i {
+  font-size: 2rem;
+  color: #d2691e; /* Tu naranja */
+}
+
+/* Lista de Habilidades */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: #f9f9f9;
   border-radius: 8px;
+  transition: background 0.2s;
 }
 
-.bar-wrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  height: 40px;
-  width: 100%;
+.skill-item:hover {
+  background: #f0f8f9;
 }
 
-.label {
-  width: 120px;
-  min-width: 120px;
-  background: var(--dark);
-  color: white;
-  height: 100%;
+.skill-info {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
+  font-weight: 500;
+  color: #444;
+}
+
+.skill-info i {
+  color: #61A6AB;
+}
+
+/* Badges de Nivel */
+.level-badge {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.85em;
-  border-radius: 4px 0 0 4px;
 }
 
-.progress-bg {
-  flex-grow: 1;
-  background: #eee;
-  height: 100%;
-  border-radius: 0 4px 4px 0;
-  position: relative;
-  overflow: hidden; /* Asegura que la barra no se salga del radio del borde */
+.level-badge[data-level="Avanzado"] {
+  background: #e1f5f6;
+  color: #61A6AB;
 }
 
-.bar-fill {
-  height: 100%;
-  background: var(--accent);
-  width: 0;
-  transition: width 2s cubic-bezier(0.1, 0, 0.1, 1);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  border-radius: 0 4px 4px 0;
+.level-badge[data-level="Intermedio"] {
+  background: #fff3e0;
+  color: #d2691e;
 }
 
-/* Color alterno para filas pares */
-.bar-wrapper:nth-of-type(2n) .bar-fill {
-  background: var(--accent-light);
+.level-badge[data-level="Explorando"] {
+  background: #f0f0f0;
+  color: #999;
 }
 
-.count {
-  color: white;
-  font-size: 0.9em;
-  font-weight: bold;
-  padding-right: 15px;
-  white-space: nowrap;
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .label {
-    width: 90px;
-    min-width: 90px;
-    font-size: 0.75em;
+/* Responsive */
+@media (max-width: 1100px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
   }
 }

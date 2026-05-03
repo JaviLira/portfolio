@@ -1,20 +1,31 @@
-<div class="wrap">
-  <h1>Mis Habilidades Técnicas</h1>
-  <div class="holder">
-    @for (skill of skills; track skill.name; let i = $index) {
-      <div class="bar-wrapper">
-        <span class="label">{{ skill.name }}</span>
+<div class="habilidades-section">
+  <div class="container">
+    <h1 class="main-title">Stack Tecnológico</h1>
+    <p class="subtitle">Herramientas y tecnologías que domino para dar vida a soluciones robustas.</p>
 
-        <div class="progress-bg">
-          <div class="bar-fill"
-               [style.width]="animated ? skill.percent + '%' : '0%'"
-               [style.transition-delay]="(i * 100) + 'ms'">
-            @if (animated) {
-              <span class="count">{{ skill.percent }}%</span>
+    <div class="categories-grid">
+      @for (cat of categories; track cat.title) {
+        <div class="category-card">
+          <div class="category-header">
+            <i [className]="cat.icon"></i>
+            <h2>{{ cat.title }}</h2>
+          </div>
+
+          <div class="skills-list">
+            @for (skill of cat.skills; track skill.name) {
+              <div class="skill-item">
+                <div class="skill-info">
+                  <i [className]="skill.icon"></i>
+                  <span>{{ skill.name }}</span>
+                </div>
+                <span class="level-badge" [attr.data-level]="skill.level">
+                  {{ skill.level }}
+                </span>
+              </div>
             }
           </div>
         </div>
-      </div>
-    }
+      }
+    </div>
   </div>
 </div>

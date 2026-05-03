@@ -1,6 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef } from '@angular/core';
+
+interface Skill {
+  name: string;
+  icon: string;
+  level: 'Avanzado' | 'Intermedio' | 'Explorando';
+}
+
+interface SkillCategory {
+  title: string;
+  icon: string;
+  skills: Skill[];
+}
 
 @Component({
   selector: 'app-habilidades',
@@ -9,25 +20,34 @@ import { ChangeDetectorRef } from '@angular/core';
   templateUrl: './habilidades.html',
   styleUrl: './habilidades.css',
 })
-export class Habilidades implements OnInit {
-  public animated = false;
-  constructor(private cd: ChangeDetectorRef) {}
-
-  public skills = [
-    { name: 'Angular', percent: 85 },
-    { name: 'Spring Boot', percent: 80 },
-    { name: 'Java', percent: 90 },
-    { name: 'Python', percent: 75 },
-    { name: 'Selenium', percent: 95 },
-    { name: 'Cucumber', percent: 90 },
-    { name: 'SQL', percent: 70 },
-    { name: 'Docker', percent: 65 }
+export class Habilidades{
+  public categories: SkillCategory[] = [
+    {
+      title: 'Desarrollo Frontend',
+      icon: 'bi bi-layout-text-sidebar-reverse',
+      skills: [
+        { name: 'Angular', icon: 'bi bi-hexagon-fill', level: 'Avanzado' },
+        { name: 'TypeScript', icon: 'bi bi-filetype-tsx', level: 'Avanzado' },
+        { name: 'HTML5/CSS3', icon: 'bi bi-code-slash', level: 'Avanzado' }
+      ]
+    },
+    {
+      title: 'Backend & Bases de Datos',
+      icon: 'bi bi-database-fill-gear',
+      skills: [
+        { name: 'Java / Spring Boot', icon: 'bi bi-cup-hot-fill', level: 'Avanzado' },
+        { name: 'Python', icon: 'bi bi-terminal-fill', level: 'Intermedio' },
+        { name: 'SQL (PostgreSQL/MySQL)', icon: 'bi bi-database-fill', level: 'Avanzado' }
+      ]
+    },
+    {
+      title: 'QA Automation & Herramientas',
+      icon: 'bi bi-check-all',
+      skills: [
+        { name: 'Selenium / Cucumber', icon: 'bi bi-robot', level: 'Avanzado' },
+        { name: 'Docker', icon: 'bi bi-box-seam-fill', level: 'Intermedio' },
+        { name: 'Git / GitHub', icon: 'bi bi-github', level: 'Avanzado' }
+      ]
+    }
   ];
-
-ngOnInit() {
-  setTimeout(() => {
-    this.animated = true;
-    this.cd.detectChanges(); // Fuerza a Angular a ver el cambio de ancho
-  }, 300);
-}
 }
