@@ -16,8 +16,8 @@
 .contacto-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 40px;
-  background: white;
+  gap: 0;
+  background: transparent;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -28,6 +28,8 @@
   background: #333;
   color: white;
   padding: 40px;
+  margin: -1px;
+  padding-left: 41px;
 }
 
 .info-sidebar h3 {
@@ -58,6 +60,7 @@
 /* Formulario */
 .formulario-card {
   padding: 40px;
+  background: white;
 }
 
 .input-group {
