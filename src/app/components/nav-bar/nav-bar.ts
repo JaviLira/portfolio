@@ -16,7 +16,7 @@ export class NavBar {
 @HostListener('window:scroll', [])
   onWindowScroll() {
     const offset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const newState = offset > 150;
+    const newState = offset > 50;
 
     if (this.isScrolled !== newState) {
       this.isScrolled = newState;

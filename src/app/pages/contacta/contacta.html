@@ -1,1 +1,74 @@
-<p>contacta works!</p>
+<div class="contacto-wrapper">
+  <div class="container">
+    <h1 class="titulo">¡Hablemos!</h1>
+
+    <div class="contacto-grid">
+      <!-- Columna 1: Info de contacto -->
+      <div class="info-sidebar">
+        <h3>Datos de Contacto</h3>
+        <p>¿Necesitas un desarrollador full stack o un Auotmatizador de Pruebas?</p>
+
+        <div class="dato-item">
+          <i class="bi bi-envelope-at"></i>
+          <div>
+            <span>Email</span>
+            <p>javilirasanchez20011812@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="dato-item">
+          <i class="bi bi-telephone"></i> <!-- O bi-whatsapp si prefieres -->
+          <div>
+            <span>Teléfono / WhatsApp</span>
+            <p><a href="tel:+34651442121">+34 651 44 21 21</a></p>
+          </div>
+        </div>
+
+        <div class="dato-item">
+          <i class="bi bi-linkedin"></i>
+          <div>
+            <span>LinkedIn</span>
+            <p><a href="https://www.linkedin.com/in/francisco-javier-lira-s%C3%A1nchez-884b3920a/" target="_blank">linkedin.com/in/francisco-javier-lira-sánchez</a></p>
+          </div>
+        </div>
+
+        <div class="dato-item">
+          <i class="bi bi-github"></i>
+          <div>
+            <span>GitHub</span>
+            <p><a href="https://github.com/JaviLira" target="_blank">github.com/JaviLira</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 2: Formulario -->
+      <div class="formulario-card">
+        <form [formGroup]="contactoForm" (ngSubmit)="enviarFormulario()">
+          <div class="input-group">
+            <label>Nombre</label>
+            <input type="text" formControlName="nombre" placeholder="Tu nombre...">
+          </div>
+
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" formControlName="email" placeholder="tu@email.com">
+          </div>
+
+          <div class="input-group">
+            <label>Asunto</label>
+            <input type="text" formControlName="asunto" placeholder="¿En qué puedo ayudarte?">
+          </div>
+
+          <div class="input-group">
+            <label>Mensaje</label>
+            <textarea formControlName="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+          </div>
+
+          <button type="submit" [disabled]="contactoForm.invalid" class="btn-enviar">
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
