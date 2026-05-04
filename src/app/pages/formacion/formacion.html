@@ -1,1 +1,20 @@
-<p>formacion works!</p>
+<div class="formacion-section">
+  <div class="container">
+    <h1 class="main-title">Mi Formación</h1>
+    <p class="subtitle">Mi camino de aprendizaje continuo y certificaciones académicas.</p>
+
+    <div class="timeline">
+      @for (item of formaciones; track item.titulo) {
+        <div class="timeline-item">
+          <div class="timeline-dot" [ngClass]="item.tipo"></div>
+          <div class="timeline-content">
+            <span class="date">{{ item.fecha }}</span>
+            <h2>{{ item.titulo }}</h2>
+            <h3>{{ item.institucion }}</h3>
+            <p>{{ item.descripcion }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
