@@ -20,22 +20,22 @@ export class Formacion {
     {
       titulo: 'Grado en Desarrollo de Aplicaciones Web',
       institucion: 'Grado superior',
-      fecha: '2018 - 2020',
-      descripcion: 'Especialización en Ingeniería del Software y Sistemas de Información.',
+      fecha: '2019 - 2022',
+      descripcion: 'Especializacion en Desarrollo de Aplicaciones Web.',
       tipo: 'grado'
     },
     {
-      titulo: 'Full Stack Java Developer',
-      institucion: 'Bootcamp Tech',
-      fecha: '2023',
-      descripcion: 'Desarrollo intensivo con Spring Boot, Angular y microservicios.',
+      titulo: 'Bootcamp Automatización de Pruebas con Selenium',
+      institucion: 'NTT Data',
+      fecha: 'Octubre 2022',
+      descripcion: 'Especializacion en Automatización de Pruebas con Selenium en python.',
       tipo: 'curso'
     },
     {
-      titulo: 'Selenium WebDriver con Java',
-      institucion: 'Udemy / TestAutomationU',
-      fecha: '2024',
-      descripcion: 'Automatización de pruebas de interfaz de usuario y frameworks BDD.',
+      titulo: 'Procesamiento De Datos Con Java',
+      institucion: 'Ipartek',
+      fecha: 'Junio 2023 - Septiembre 2023',
+      descripcion: 'Especializacion en Procesamiento de Datos con Java.',
       tipo: 'certificacion'
     }
   ];
