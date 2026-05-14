@@ -17,12 +17,12 @@ interface Formacion_i {
 })
 export class Formacion {
   public formaciones: Formacion_i[] = [
-    {
-      titulo: 'Grado en Desarrollo de Aplicaciones Web',
-      institucion: 'Grado superior',
-      fecha: '2019 - 2022',
-      descripcion: 'Especializacion en Desarrollo de Aplicaciones Web.',
-      tipo: 'grado'
+        {
+      titulo: 'Procesamiento De Datos Con Java',
+      institucion: 'Ipartek',
+      fecha: 'Junio 2023 - Septiembre 2023',
+      descripcion: 'Especializacion en Procesamiento de Datos con Java.',
+      tipo: 'certificacion'
     },
     {
       titulo: 'Bootcamp Automatización de Pruebas con Selenium',
@@ -32,11 +32,11 @@ export class Formacion {
       tipo: 'curso'
     },
     {
-      titulo: 'Procesamiento De Datos Con Java',
-      institucion: 'Ipartek',
-      fecha: 'Junio 2023 - Septiembre 2023',
-      descripcion: 'Especializacion en Procesamiento de Datos con Java.',
-      tipo: 'certificacion'
+      titulo: 'Grado en Desarrollo de Aplicaciones Web',
+      institucion: 'Grado superior',
+      fecha: '2019 - 2022',
+      descripcion: 'Especializacion en Desarrollo de Aplicaciones Web.',
+      tipo: 'grado'
     }
   ];
 

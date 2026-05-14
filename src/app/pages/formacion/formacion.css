@@ -18,15 +18,14 @@
   color: #ffffff;
 }
 
-/* La línea vertical central */
 .timeline::after {
   content: '';
   position: absolute;
   width: 4px;
-  background-color: #61A6AB; /* Tu azul principal */
+  background-color: #61A6AB;
   top: 0;
   bottom: 0;
-  left: 20px; /* Alineado a la izquierda para móviles y web */
+  left: 20px;
   margin-left: -2px;
 }
 
@@ -39,19 +38,17 @@
   margin-bottom: 30px;
 }
 
-/* El punto en la línea */
 .timeline-dot {
   position: absolute;
   width: 20px;
   height: 20px;
   left: 10px;
   background-color: white;
-  border: 4px solid #d2691e; /* Tu naranja de acento */
+  border: 4px solid #d2691e;
   border-radius: 50%;
   z-index: 1;
 }
 
-/* Colores diferentes según el tipo */
 .timeline-dot.grado { border-color: #d2691e; }
 .timeline-dot.certificacion { border-color: #61A6AB; }
 .timeline-dot.curso { border-color: #333; }
@@ -96,7 +93,6 @@
   margin: 0;
 }
 
-/* Responsivo para pantallas grandes si quieres la línea en el medio */
 @media screen and (min-width: 900px) {
   .timeline::after {
     left: 50%;
